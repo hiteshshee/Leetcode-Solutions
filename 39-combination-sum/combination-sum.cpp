@@ -2,19 +2,16 @@ class Solution {
 public:
 vector<vector<int>> ans;
     void solve(int idx,vector<int>& curr,vector<int>& candidates,int target){
-        int sum=0;
-        for(int i=0;i<curr.size();i++){
-            sum+=curr[i];
-        }
-        if(sum==target){
+        
+        if(target==0){
             ans.push_back(curr);
             return;
         }
-        if(idx==candidates.size()||sum>target){
+        if(idx==candidates.size()||target<0){
             return;
         }
         curr.push_back(candidates[idx]);
-        solve(idx,curr,candidates,target);
+        solve(idx,curr,candidates,target-candidates[idx]);
         curr.pop_back();
         solve(idx+1,curr,candidates,target);
     }
