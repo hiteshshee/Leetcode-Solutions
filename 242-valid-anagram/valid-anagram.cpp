@@ -44,14 +44,6 @@ public:
         if(n!=m){
             return false;
         }
-        // vector<int> freq(26,0);
-        // vector<int> freq2(26,0);
-        // for(int i=0;i<n;i++){
-        //     freq[s[i]-'a']++;
-        //     freq2[t[i]-'a']++;
-        // }
-        // sort(freq.begin(),freq.end());
-        // sort(freq2.begin(),freq2.end());
         for(int i=0;i<n;i++){
             if(s[i]!=t[i]){
                 return false;
